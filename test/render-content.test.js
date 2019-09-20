@@ -14,7 +14,7 @@ test('renderContent', async t => {
     const template = `
       For example: {% raw %}{% include cool_header.html %}{% endraw %}.
     `
-    const expected = `<p>For example: {% include cool_header.html %}.</p>`
+    const expected = '<p>For example: {% include cool_header.html %}.</p>'
     const output = await renderContent(template)
     t.equal(output, expected)
   })
@@ -27,7 +27,7 @@ test('renderContent', async t => {
           data: {
             reusables: {
               fake_reusable_file: {
-                'foo': '{% raw %}{% include cool_header.html %}{% endraw %}'
+                foo: '{% raw %}{% include cool_header.html %}{% endraw %}'
               }
             }
           }
@@ -37,7 +37,7 @@ test('renderContent', async t => {
     const template = `
       For example: {{ site.data.reusables.fake_reusable_file.foo }}.
     `
-    const expected = `<p>For example: {% include cool_header.html %}.</p>`
+    const expected = '<p>For example: {% include cool_header.html %}.</p>'
     const context = site.en
     const output = await renderContent(template, context)
 

@@ -20,7 +20,7 @@ function replaceKeywords (match, p1, p2, p3) {
       console.error(`Need to add ${color[1]} to primerColors list`)
       return
     }
-    options['fill'] = primerColor
+    options.fill = primerColor
   }
   return `<span class="octicon octicon-${p1}" aria-label="${p2}" title="${p2}">${octicon.toSVG(options)}</span>`
 }
