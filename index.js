@@ -77,3 +77,9 @@ module.exports = async function renderContent (
     throw error
   }
 }
+
+Object.assign(module.exports, {
+  liquid,
+  liquidOcticons,
+  extendMarkdown
+})
