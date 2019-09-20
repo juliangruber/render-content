@@ -4,13 +4,19 @@
   "description": "Markdown rendering pipeline",
   "repository": "docs/render-content",
   "license": "MIT",
+  "scripts": {
+    "test": "tap test/*.js"
+  },
   "dependencies": {
     "@primer/octicons": "^9.1.1",
     "change-case": "^3.1.0",
-    "cheerio": "^1.0.0-rc.3",
     "html-entities": "^1.2.1",
     "hubdown": "^2.1.0",
     "liquid": "^4.0.0",
     "semver": "^5.7.1"
+  },
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "tap": "^14.6.4"
   }
 }
