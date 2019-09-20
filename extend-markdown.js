@@ -17,9 +17,7 @@ function extendMarkdown (string) {
   for (const tag in tags) {
     const opening = new RegExp(`{{#(${tag})}}`, 'gm')
     const closing = new RegExp(`{{/(${tag})}}`, 'gm')
-    string = string
-      .replace(opening, replaceOpening)
-      .replace(closing, '</div>')
+    string = string.replace(opening, replaceOpening).replace(closing, '</div>')
   }
 
   return string

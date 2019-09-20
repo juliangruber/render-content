@@ -5,7 +5,9 @@ const liquidRaw = {}
 // `{{ foo.bar }}` becomes `{---{ foo.bar }---}`
 // `{% endraw %}` becomes `{---% endraw %---}`
 liquidRaw.obfuscate = template => {
-  if (!template || !template.length || !template.includes('{% raw %}')) return template
+  if (!template || !template.length || !template.includes('{% raw %}')) {
+    return template
+  }
 
   let withinRawBlock = false
 

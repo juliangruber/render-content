@@ -20,7 +20,10 @@ module.exports = class LinkWithIntro extends Liquid.Tag {
     super()
     this.href = href.trim()
     this.tagName = tagName
-    this.templatePath = path.join(__dirname, `../../includes/${paramCase(this.constructor.name)}.html`)
+    this.templatePath = path.join(
+      __dirname,
+      `../../includes/${paramCase(this.constructor.name)}.html`
+    )
     this.template = null
     return this
   }
@@ -34,8 +37,14 @@ module.exports = class LinkWithIntro extends Liquid.Tag {
     const fullPath = `/${ctx.currentLanguage}${this.href}`
     const page = ctx.pages[fullPath]
     if (!page) throw new Error(`${this.tagName} href not found: ${this.href}`)
-    const title = await page.renderProp('title', ctx, { textOnly: true, encodeEntities: true })
-    const intro = await page.renderProp('intro', ctx, { textOnly: true, encodeEntities: true })
+    const title = await page.renderProp('title', ctx, {
+      textOnly: true,
+      encodeEntities: true
+    })
+    const intro = await page.renderProp('intro', ctx, {
+      textOnly: true,
+      encodeEntities: true
+    })
     return liquid.parseAndRender(this.template, { fullPath, title, intro })
   }
 }

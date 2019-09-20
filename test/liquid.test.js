@@ -17,13 +17,16 @@ test('liquid template parser', async t => {
         t.equal(output.trim(), 'up to date')
       })
 
-      await t.test('returns false when given value is not numeric, like `dotcom`', async t => {
-        const context = {
-          productVersion: 'dotcom'
+      await t.test(
+        'returns false when given value is not numeric, like `dotcom`',
+        async t => {
+          const context = {
+            productVersion: 'dotcom'
+          }
+          const output = await liquid.parseAndRender(template, context)
+          t.equal(output.trim(), '')
         }
-        const output = await liquid.parseAndRender(template, context)
-        t.equal(output.trim(), '')
-      })
+      )
 
       await t.test('returns false when given value is falsy', async t => {
         const context = {}

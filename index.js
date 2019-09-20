@@ -9,7 +9,11 @@ const Entities = require('html-entities').XmlEntities
 const entities = new Entities()
 
 // parse multiple times because some templates contain more templates. :]
-module.exports = async function renderContent (template, context = {}, options = {}) {
+module.exports = async function renderContent (
+  template,
+  context = {},
+  options = {}
+) {
   try {
     template = whitespaceControl(template)
 
@@ -37,7 +41,10 @@ module.exports = async function renderContent (template, context = {}, options =
     template = await liquid.parseAndRender(template, context)
 
     // this workaround loses syntax highlighting but correctly handles tags like <em> and entities like &lt;
-    template = template.replace(/``` ?shell\n\s*?(\S[\s\S]*?)\n.*?```/gm, '<pre><code class="hljs language-shell">$1</code></pre>')
+    template = template.replace(
+      /``` ?shell\n\s*?(\S[\s\S]*?)\n.*?```/gm,
+      '<pre><code class="hljs language-shell">$1</code></pre>'
+    )
 
     // this removes any extra newlines left by (now resolved) liquid
     // statements so that extra space doesn't mess with list numbering
@@ -51,7 +58,12 @@ module.exports = async function renderContent (template, context = {}, options =
       .replace(/\n(<a|<code)/gm, '$1')
       .replace(/(\/a>|\/code>)\n/gm, '$1')
 
-    if (options.textOnly) html = cheerio.load(html).text().trim()
+    if (options.textOnly) {
+      html = cheerio
+        .load(html)
+        .text()
+        .trim()
+    }
 
     if (options.encodeEntities) html = entities.encode(html)
 
@@ -60,6 +72,6 @@ module.exports = async function renderContent (template, context = {}, options =
     if (options.filename) {
       console.error(`renderContent failed on file: ${options.filename}`)
     }
-    throw (error)
+    throw error
   }
 }

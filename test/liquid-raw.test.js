@@ -7,7 +7,8 @@ test('liquidRaw module', async t => {
       const input = `
         For example: {% raw %} {% include cool_header.html %} {% endraw %}.
       `
-      const output = 'For example: {---% raw %---} {---% include cool_header.html %---} {---% endraw %---}.'
+      const output =
+        'For example: {---% raw %---} {---% include cool_header.html %---} {---% endraw %---}.'
       t.equal(obfuscate(input), output)
     })
 
@@ -27,8 +28,10 @@ test('liquidRaw module', async t => {
 
   await t.test('deobfuscate(template)', async t => {
     await t.test('works on inline/one-liner raw templates', async t => {
-      const input = 'For example: {---% raw %---} {---% include cool_header.html %---} {---% endraw %---}.'
-      const output = 'For example: {% raw %} {% include cool_header.html %} {% endraw %}.'
+      const input =
+        'For example: {---% raw %---} {---% include cool_header.html %---} {---% endraw %---}.'
+      const output =
+        'For example: {% raw %} {% include cool_header.html %} {% endraw %}.'
       t.equal(deobfuscate(input), output)
     })
 

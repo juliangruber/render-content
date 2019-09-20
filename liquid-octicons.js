@@ -22,7 +22,9 @@ function replaceKeywords (match, p1, p2, p3) {
     }
     options.fill = primerColor
   }
-  return `<span class="octicon octicon-${p1}" aria-label="${p2}" title="${p2}">${octicon.toSVG(options)}</span>`
+  return `<span class="octicon octicon-${p1}" aria-label="${p2}" title="${p2}">${octicon.toSVG(
+    options
+  )}</span>`
 }
 
 // example: {{ octicon-kebab-horizontal The horizontal kebab icon }}

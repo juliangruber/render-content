@@ -45,11 +45,23 @@ const $ = cheerio.load(extended, { xmlMode: true })
 
 test('extendMarkdown', async t => {
   await t.test('converts stings like `{{#tip}}` to HTML elements', async t => {
-    t.equal($('.extended-markdown.tip').eq(0).text().trim(), 'I am a tip')
+    t.equal(
+      $('.extended-markdown.tip')
+        .eq(0)
+        .text()
+        .trim(),
+      'I am a tip'
+    )
   })
 
   await t.test('converts multiple instances of the same tag', async t => {
-    t.equal($('.extended-markdown.tip').eq(1).text().trim(), 'I am another tip')
+    t.equal(
+      $('.extended-markdown.tip')
+        .eq(1)
+        .text()
+        .trim(),
+      'I am another tip'
+    )
   })
 
   await t.test('tips', async t => {
@@ -98,15 +110,30 @@ test('extendMarkdown', async t => {
 
   await t.test('platforms (Mac/Windows/Linux)', async t => {
     await t.test('mac does not have special styling', async t => {
-      t.equal($('.extended-markdown.mac').attr('class').trim(), 'extended-markdown mac')
+      t.equal(
+        $('.extended-markdown.mac')
+          .attr('class')
+          .trim(),
+        'extended-markdown mac'
+      )
     })
 
     await t.test('windows does not have special styling', async t => {
-      t.equal($('.extended-markdown.windows').attr('class').trim(), 'extended-markdown windows')
+      t.equal(
+        $('.extended-markdown.windows')
+          .attr('class')
+          .trim(),
+        'extended-markdown windows'
+      )
     })
 
     await t.test('linux does not have special styling', async t => {
-      t.equal($('.extended-markdown.linux').attr('class').trim(), 'extended-markdown linux')
+      t.equal(
+        $('.extended-markdown.linux')
+          .attr('class')
+          .trim(),
+        'extended-markdown linux'
+      )
     })
   })
 

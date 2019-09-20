@@ -9,7 +9,8 @@ test('liquid octicons', async t => {
   })
 
   await t.test('renders liquid octicons with optional color', async t => {
-    const template = '{{ octicon-diff-removed The diff removed icon color-red }}'
+    const template =
+      '{{ octicon-diff-removed The diff removed icon color-red }}'
     const output = liquidOcticons(template)
     t.ok(/svg/.test(output))
     t.ok(/#cb2431/.test(output))
