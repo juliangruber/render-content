@@ -1,0 +1,16 @@
+{
+  "name": "@github-docs/render-content",
+  "version": "0.0.0",
+  "description": "Markdown rendering pipeline",
+  "repository": "docs/render-content",
+  "license": "MIT",
+  "dependencies": {
+    "@primer/octicons": "^9.1.1",
+    "change-case": "^3.1.0",
+    "cheerio": "^1.0.0-rc.3",
+    "html-entities": "^1.2.1",
+    "hubdown": "^2.1.0",
+    "liquid": "^4.0.0",
+    "semver": "^5.7.1"
+  }
+}
