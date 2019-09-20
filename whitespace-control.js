@@ -1,3 +1,5 @@
+'use strict'
+
 // ref: https://github.com/Shopify/liquid/pull/773
 // whitespace control is not part of `liquid` (see https://git.io/fhpIa)
 module.exports = function whitespaceControl (markdown) {

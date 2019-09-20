@@ -1,3 +1,5 @@
+'use strict'
+
 const liquidRaw = {}
 
 // Mess up `raw` blocks so they'll be overlooked by the Liquid parser

@@ -1,3 +1,5 @@
+'use strict'
+
 const octicons = require('@primer/octicons')
 
 const primerColors = {

@@ -1,3 +1,5 @@
+'use strict'
+
 const liquid = require('../liquid')
 const { test } = require('tap')
 

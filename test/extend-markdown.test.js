@@ -1,3 +1,5 @@
+'use strict'
+
 const extendMarkdown = require('../extend-markdown')
 const cheerio = require('cheerio')
 const { test } = require('tap')

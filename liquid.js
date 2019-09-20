@@ -1,3 +1,5 @@
+'use strict'
+
 const Liquid = require('liquid')
 const semver = require('semver')
 const engine = new Liquid.Engine()

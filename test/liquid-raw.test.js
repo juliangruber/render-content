@@ -1,3 +1,5 @@
+'use strict'
+
 const { obfuscate, deobfuscate } = require('../liquid-raw')
 const { test } = require('tap')
 

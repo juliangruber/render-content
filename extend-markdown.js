@@ -1,3 +1,5 @@
+'use strict'
+
 const tags = {
   mac: '',
   windows: '',

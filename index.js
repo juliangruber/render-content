@@ -1,3 +1,5 @@
+'use strict'
+
 const liquid = require('./liquid')
 const hubdown = require('hubdown')
 const extendMarkdown = require('./extend-markdown')

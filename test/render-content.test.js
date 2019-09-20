@@ -1,3 +1,5 @@
+'use strict'
+
 const cheerio = require('cheerio')
 const renderContent = require('..')
 const { test } = require('tap')
