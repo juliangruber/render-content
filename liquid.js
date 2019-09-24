@@ -2,7 +2,11 @@
 
 const Liquid = require('liquid')
 const semver = require('semver')
+const path = require('path')
 const engine = new Liquid.Engine()
+engine.registerFileSystem(
+  new Liquid.LocalFileSystem(path.join(process.cwd(), 'includes'))
+)
 
 // GHE versions are not valid SemVer, but can be coerced...
 // https://github.com/npm/node-semver#coercion

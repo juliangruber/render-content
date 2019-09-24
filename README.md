@@ -34,6 +34,8 @@ $ npm install @github-docs/render-content
 
 Render a string of `markdown` with optional `context`. Returns a `Promise`.
 
+Liquid will be looking for includes in `${process.cwd()}/includes`.
+
 Options:
 
 - `encodeEntities`: Encode html entities. Default: `false`.
