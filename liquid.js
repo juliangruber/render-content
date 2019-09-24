@@ -21,9 +21,6 @@ Liquid.Condition.operators.ver_lt = (cond, left, right) => {
   return semver.lt(semver.coerce(left), semver.coerce(right))
 }
 
-// Include custom tags like {% link_with_intro /article/foo %}
-engine.registerTag('link_with_intro', require('./liquid-tags/link-with-intro'))
-
 module.exports = engine
 
 function startsWithNumber (input) {
