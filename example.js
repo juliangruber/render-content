@@ -1,10 +1,11 @@
 const renderContent = require('./')
 
 const main = async () => {
-  const html = await renderContent(`
+  const markdown = `
 # Beep
 {{ foo }}
-  `, {
+  `
+  const html = await renderContent(markdown, {
     foo: 'bar'
   })
   console.log(html)
