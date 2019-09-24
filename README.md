@@ -32,7 +32,7 @@ $ npm install @github-docs/render-content
 
 ### renderContent(markdown, context = {}, options = {})
 
-Render a string of `markdown`. Returns a `Promise`.
+Render a string of `markdown` with optional `context`. Returns a `Promise`.
 
 Options:
 
