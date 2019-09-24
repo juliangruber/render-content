@@ -1,6 +1,6 @@
 'use strict'
 
-const liquid = require('../liquid')
+const { liquid } = require('..')
 const { test } = require('tap')
 
 const template = `

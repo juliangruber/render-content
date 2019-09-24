@@ -1,7 +1,7 @@
 'use strict'
 
 const { test } = require('tap')
-const liquidOcticons = require('../liquid-octicons')
+const { liquidOcticons } = require('..')
 
 test('liquid octicons', async t => {
   await t.test('renders liquid octicons', async t => {
