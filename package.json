@@ -5,7 +5,8 @@
   "repository": "docs/render-content",
   "license": "MIT",
   "scripts": {
-    "test": "prettier-standard '**/*.js' && standard && tap test/*.js"
+    "test": "prettier-standard '**/*.js' && standard && tap test/*.js && npm run test:deps",
+    "test:deps": "dependency-check . --missing && dependency-check . --unused --no-dev"
   },
   "dependencies": {
     "@primer/octicons": "^9.1.1",
@@ -16,6 +17,7 @@
   },
   "devDependencies": {
     "cheerio": "^1.0.0-rc.3",
+    "dependency-check": "^4.1.0",
     "prettier-standard": "^14.0.5",
     "standard": "^14.3.1",
     "tap": "^14.6.4"
