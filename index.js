@@ -9,6 +9,7 @@ const liquidOcticons = require('./liquid-octicons')
 const cheerio = require('cheerio')
 const Entities = require('html-entities').XmlEntities
 const entities = new Entities()
+const stripHtmlComments = require('strip-html-comments')
 
 // parse multiple times because some templates contain more templates. :]
 module.exports = async function renderContent (
@@ -17,6 +18,8 @@ module.exports = async function renderContent (
   options = {}
 ) {
   try {
+    if (template) template = stripHtmlComments(template)
+
     template = whitespaceControl(template)
 
     // obfuscate {% raw %} blocks so they won't be 'overparsed'
