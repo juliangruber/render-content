@@ -23,7 +23,7 @@ test('liquid octicons', async t => {
 
     const error = console.error
     console.error = message => {
-      t.equal(message, 'No octicon found called \'not-found')
+      t.equal(message, "No octicon found called 'not-found'")
       console.error = error
     }
 
