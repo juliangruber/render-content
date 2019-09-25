@@ -17,4 +17,17 @@ test('liquid octicons', async t => {
     t.ok(/svg/.test(output))
     t.ok(/#cb2431/.test(output))
   })
+
+  await t.test('warns when octicon not found', async t => {
+    const template = '{{ octicon-not-found The horizontal kebab icon }}'
+
+    const error = console.error
+    console.error = message => {
+      t.equal(message, 'No octicon found called \'not-found')
+      console.error = error
+    }
+
+    const output = liquidOcticons(template)
+    t.equal(output, 'undefined')
+  })
 })
