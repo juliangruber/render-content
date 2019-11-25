@@ -5,7 +5,7 @@
   "repository": "https://github.com/docs/render-content",
   "license": "MIT",
   "scripts": {
-    "lint": "standard --fix && prettier-standard",
+    "lint": "standard --fix && prettier-standard --format **/*.js",
     "test": "npm run lint && tap test/*.js && npm run test:deps",
     "test:deps": "dependency-check . --missing --no-dev && dependency-check . --unused --no-dev"
   },
