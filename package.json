@@ -1,6 +1,6 @@
 {
   "name": "@github-docs/render-content",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Markdown and Liquid rendering pipeline",
   "repository": "https://github.com/docs/render-content",
   "license": "MIT",
