@@ -235,5 +235,17 @@ test('renderContent', async t => {
         '<h5 id="this-is-a-level-five"><a href="#this-is-a-level-five">This is a level five</a></h5>'
       )
     )
+
+    await t.only('does not autoguess code block language', async t => {
+      const template = `
+\`\`\`
+some code
+\`\`\`\
+      `
+      const html = await renderContent(template)
+      const $ = cheerio.load(html, { xmlMode: true })
+      console.log($.html())
+      t.ok($.html().includes('<pre><code class="hljs">'))
+    })
   })
 })
